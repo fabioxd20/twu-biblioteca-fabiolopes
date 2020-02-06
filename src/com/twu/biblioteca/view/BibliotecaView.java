@@ -11,7 +11,7 @@ public class BibliotecaView {
         return "Welcome to Biblioteca your one-stop-shop for great book titles in Bangalore!";
     }
 
-    public Object showListOfBooks() {
+    public String showListBooksName() {
         BibliotecaService bibliotecaService = new BibliotecaService();
 
         List<Book> books = bibliotecaService.getBooks();
@@ -23,5 +23,22 @@ public class BibliotecaView {
         }
 
         return booksName;
+    }
+
+    public String showListOfBooksWithAuthorAndYear() {
+        BibliotecaService bibliotecaService = new BibliotecaService();
+
+        List<Book> books = bibliotecaService.getBooks();
+
+        String booksAuthorAndYear = "";
+
+        for (Book book: books) {
+            booksAuthorAndYear += book.getName() + "|" +
+                    book.getAuthor() + "|" +
+                    book.getYear() +
+                    "\n";
+        }
+
+        return booksAuthorAndYear;
     }
 }

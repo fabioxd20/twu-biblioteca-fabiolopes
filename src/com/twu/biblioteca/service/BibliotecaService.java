@@ -15,7 +15,10 @@ public class BibliotecaService {
     }
 
     public void loadBooks() {
-        booksList = Arrays.asList(new Book("Book One"), new Book("Book Two"));
+        booksList = Arrays.asList(
+                new Book("Book One","Author One","2001"),
+                new Book("Book Two","Author Two","2002")
+                );
     }
 
     public List<Book> getBooks() {

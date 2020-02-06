@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
 import org.junit.Test;
 
@@ -25,6 +24,16 @@ public class BibliotecaViewTest {
 
         BibliotecaView bibliotecaView = new BibliotecaView();
 
-        assertThat(bibliotecaView.showListOfBooks(), is(listOfBooksMessage));
+        assertThat(bibliotecaView.showListBooksName(), is(listOfBooksMessage));
+    }
+
+
+    @Test
+    public void testShowListOfBooksWithAuthorAndYear() {
+        String listOfBooksWithAuthorAndYearMessage = "Book One|Author One|2001\nBook Two|Author Two|2002\n";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.showListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYearMessage));
     }
 }
