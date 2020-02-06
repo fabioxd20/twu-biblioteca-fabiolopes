@@ -3,6 +3,8 @@ package com.twu.biblioteca.view;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.service.BibliotecaService;
 
+import java.util.List;
+
 public class BibliotecaView {
 
     public String showWelcomeMessage() {
@@ -12,9 +14,11 @@ public class BibliotecaView {
     public Object showListOfBooks() {
         BibliotecaService bibliotecaService = new BibliotecaService();
 
+        List<Book> books = bibliotecaService.getBooks();
+
         String booksName = "";
 
-        for (Book book: bibliotecaService.getBooks()) {
+        for (Book book: books) {
             booksName += book.getName() + "\n";
         }
 
