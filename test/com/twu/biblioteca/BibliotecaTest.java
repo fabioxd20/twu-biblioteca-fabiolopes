@@ -1,12 +1,12 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 public class BibliotecaTest {
 
@@ -17,5 +17,23 @@ public class BibliotecaTest {
         BibliotecaView bibliotecaView = new BibliotecaView();
 
         assertThat(bibliotecaView.showWelcomeMessage(), is(welcomeMessage));
+    }
+
+    @Test
+    public void testListOfBooks(){
+        BibliotecaService bibliotecaService = new BibliotecaService();
+
+        bibliotecaService.loadBooks();
+
+        assertTrue(bibliotecaService.getBooks().size() > 0);
+    }
+
+    @Test
+    public void testShowListOfBooks() {
+        String listOfBooksMessage = "Book One\nBook Two\n";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.showListOfBooks(), is(listOfBooksMessage));
     }
 }
