@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class BibliotecaTest {
+public class BibliotecaViewTest {
 
     @Test
     public void testShowWelcomeMessage() {
@@ -17,15 +17,6 @@ public class BibliotecaTest {
         BibliotecaView bibliotecaView = new BibliotecaView();
 
         assertThat(bibliotecaView.showWelcomeMessage(), is(welcomeMessage));
-    }
-
-    @Test
-    public void testListOfBooks(){
-        BibliotecaService bibliotecaService = new BibliotecaService();
-
-        bibliotecaService.loadBooks();
-
-        assertTrue(bibliotecaService.getBooks().size() > 0);
     }
 
     @Test

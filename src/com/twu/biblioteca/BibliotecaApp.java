@@ -8,5 +8,6 @@ public class BibliotecaApp {
         BibliotecaView bibliotecaView = new BibliotecaView();
 
         System.out.println(bibliotecaView.showWelcomeMessage());
+        System.out.println(bibliotecaView.showListOfBooks());
     }
 }
