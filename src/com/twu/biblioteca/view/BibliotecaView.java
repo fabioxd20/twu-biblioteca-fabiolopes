@@ -24,4 +24,8 @@ public class BibliotecaView {
 
         return booksAuthorAndYear;
     }
+
+    public Object showMenuOptions() {
+        return "1 - List of books";
+    }
 }

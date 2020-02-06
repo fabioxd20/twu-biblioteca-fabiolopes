@@ -26,4 +26,13 @@ public class BibliotecaViewTest {
 
         assertThat(bibliotecaView.showListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYearMessage));
     }
+
+    @Test
+    public void testShowMenuOptions() {
+        String menuOptions = "1 - List of books";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.showMenuOptions(), is(menuOptions));
+    }
 }
