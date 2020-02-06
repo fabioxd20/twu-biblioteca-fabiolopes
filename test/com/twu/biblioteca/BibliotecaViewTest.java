@@ -20,11 +20,11 @@ public class BibliotecaViewTest {
 
     @Test
     public void testShowListOfBooksWithAuthorAndYear() {
-        String listOfBooksWithAuthorAndYearMessage = "Book One|Author One|2001\nBook Two|Author Two|2002\n";
+        String listOfBooksWithAuthorAndYear = "Book One|Author One|2001\nBook Two|Author Two|2002\n";
 
         BibliotecaView bibliotecaView = new BibliotecaView();
 
-        assertThat(bibliotecaView.showListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYearMessage));
+        assertThat(bibliotecaView.showListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYear));
     }
 
     @Test
@@ -34,5 +34,16 @@ public class BibliotecaViewTest {
         BibliotecaView bibliotecaView = new BibliotecaView();
 
         assertThat(bibliotecaView.showMenuOptions(), is(menuOptions));
+    }
+
+    @Test
+    public void testListOfBookOptionSelected() {
+        int listOfBooksOption = 1;
+
+        String listOfBooksWithAuthorAndYear = "Book One|Author One|2001\nBook Two|Author Two|2002\n";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.choiceMenuOption(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
     }
 }

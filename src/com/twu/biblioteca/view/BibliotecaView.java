@@ -25,7 +25,17 @@ public class BibliotecaView {
         return booksAuthorAndYear;
     }
 
-    public Object showMenuOptions() {
+    public String showMenuOptions() {
         return "1 - List of books";
+    }
+
+    public String choiceMenuOption(int optionSelected) {
+        switch (optionSelected)
+        {
+            case 1:
+                return this.showListOfBooksWithAuthorAndYear();
+            default:
+                return "";
+        }
     }
 }
