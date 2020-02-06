@@ -19,16 +19,6 @@ public class BibliotecaViewTest {
     }
 
     @Test
-    public void testShowListOfBooks() {
-        String listOfBooksMessage = "Book One\nBook Two\n";
-
-        BibliotecaView bibliotecaView = new BibliotecaView();
-
-        assertThat(bibliotecaView.showListBooksName(), is(listOfBooksMessage));
-    }
-
-
-    @Test
     public void testShowListOfBooksWithAuthorAndYear() {
         String listOfBooksWithAuthorAndYearMessage = "Book One|Author One|2001\nBook Two|Author Two|2002\n";
 

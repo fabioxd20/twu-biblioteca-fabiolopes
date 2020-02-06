@@ -35,4 +35,9 @@ public class Book {
     public String getName() {
         return this.name;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + "|" +this.getAuthor() + "|" + this.getYear();
+    }
 }
