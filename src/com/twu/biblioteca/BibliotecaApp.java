@@ -19,6 +19,16 @@ public class BibliotecaApp {
             String optionSelected = scanner.next();
 
             System.out.println(BibliotecaView.getMessageMenuOptionSelected(optionSelected));
+
+            switch (optionSelected)
+            {
+                case "0":
+                    System.exit ( 0 );
+                case "2":
+                    scanner = new Scanner(System.in);
+                    String checkoutOption = scanner.next();
+                    BibliotecaService.checkoutBook (checkoutOption);
+            }
         }
     }
 }

@@ -17,13 +17,13 @@ public class BibliotecaServiceTest {
 
     @Test
     public void testCheckoutABook() {
-        String checkoutBookOption = "1";
+        String bookId = "1";
 
         BibliotecaService.loadBooks();
 
         int expectBookListSize = BibliotecaService.getBooks().size() - 1;
 
-        BibliotecaService.checkoutBook(checkoutBookOption);
+        BibliotecaService.checkoutBook(bookId);
 
         assertThat(BibliotecaService.getBooks().size(), is(expectBookListSize));
     }

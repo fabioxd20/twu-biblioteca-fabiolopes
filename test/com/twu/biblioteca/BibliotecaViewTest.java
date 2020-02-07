@@ -29,7 +29,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void testShowMenuOptions() {
-        String menuOptions = "1 - List of books\n2 - Checkout a book";
+        String menuOptions = "1 - List of books\n2 - Checkout a book\n3 - Quit";
 
         assertThat(BibliotecaView.showMenuOptions(), is(menuOptions));
     }
