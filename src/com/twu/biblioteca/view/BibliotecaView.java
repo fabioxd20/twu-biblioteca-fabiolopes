@@ -16,30 +16,34 @@ public class BibliotecaView {
 
         List<Book> books = bibliotecaService.getBooks();
 
-        StringBuilder booksAuthorAndYear = new StringBuilder ();
+        StringBuilder booksAuthorAndYear = new StringBuilder();
 
         for (Book book: books) booksAuthorAndYear.append(book.toString()).append("\n");
 
         return booksAuthorAndYear.toString ();
     }
 
-    public String showMenuOptions() {
-        return "1 - List of books";
-    }
+    public String showMenuOptions() { return "1 - List of books\n2 - Checkout a book"; }
 
     public String showQuitMessage() {
         return "See you later!";
     }
 
-    public String choiceMenuOption(String optionSelected) {
+    public String showCheckoutBookMessage() { return "What book you want do the checkout? (Insert the position)"; }
+
+    public String showDefaultMessageOptionInvalid() { return "Please select a valid option!"; }
+
+    public String getMessageMenuOptionSelected(String optionSelected) {
         switch (optionSelected)
         {
             case "0":
                 return this.showQuitMessage();
             case "1":
                 return this.showListOfBooksWithAuthorAndYear();
+            case "2":
+                return this.showCheckoutBookMessage();
             default:
-                return "Please select a valid option!";
+                return this.showDefaultMessageOptionInvalid();
         }
     }
 }

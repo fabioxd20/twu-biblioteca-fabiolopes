@@ -29,7 +29,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void testShowMenuOptions() {
-        String menuOptions = "1 - List of books";
+        String menuOptions = "1 - List of books\n2 - Checkout a book";
 
         BibliotecaView bibliotecaView = new BibliotecaView();
 
@@ -44,7 +44,7 @@ public class BibliotecaViewTest {
 
         BibliotecaView bibliotecaView = new BibliotecaView();
 
-        assertThat(bibliotecaView.choiceMenuOption(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
+        assertThat(bibliotecaView.getMessageMenuOptionSelected(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
     }
 
     @Test
@@ -55,7 +55,7 @@ public class BibliotecaViewTest {
 
         BibliotecaView bibliotecaView = new BibliotecaView();
 
-        assertThat(bibliotecaView.choiceMenuOption(invalidOption), is(invalidMessage));
+        assertThat(bibliotecaView.getMessageMenuOptionSelected(invalidOption), is(invalidMessage));
     }
 
     @Test
@@ -66,6 +66,17 @@ public class BibliotecaViewTest {
 
         BibliotecaView bibliotecaView = new BibliotecaView();
 
-        assertThat(bibliotecaView.choiceMenuOption(quitOption), is(quitMessage));
+        assertThat(bibliotecaView.getMessageMenuOptionSelected(quitOption), is(quitMessage));
+    }
+
+    @Test
+    public void testCheckoutOptionMessage() {
+        String checkoutOption = "2";
+
+        String checkoutMessage = "What book you want do the checkout? (Insert the position)";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
     }
 }
