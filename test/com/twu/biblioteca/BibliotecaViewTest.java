@@ -57,4 +57,15 @@ public class BibliotecaViewTest {
 
         assertThat(bibliotecaView.choiceMenuOption(invalidOption), is(invalidMessage));
     }
+
+    @Test
+    public void testQuitOption() {
+        int quitOption = 0;
+
+        String quitMessage = "See you later!";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.choiceMenuOption(quitOption), is(quitMessage));
+    }
 }

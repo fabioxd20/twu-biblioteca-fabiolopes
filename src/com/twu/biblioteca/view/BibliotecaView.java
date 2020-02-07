@@ -29,9 +29,15 @@ public class BibliotecaView {
         return "1 - List of books";
     }
 
+    public String showQuitMessage() {
+        return "See you later!";
+    }
+
     public String choiceMenuOption(int optionSelected) {
         switch (optionSelected)
         {
+            case 0:
+                return this.showQuitMessage();
             case 1:
                 return this.showListOfBooksWithAuthorAndYear();
             default:
