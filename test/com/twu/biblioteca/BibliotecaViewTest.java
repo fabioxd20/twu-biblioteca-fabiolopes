@@ -59,7 +59,7 @@ public class BibliotecaViewTest {
     }
 
     @Test
-    public void testQuitOption() {
+    public void testQuitOptionMessage() {
         String quitOption = "0";
 
         String quitMessage = "See you later!";
