@@ -12,7 +12,7 @@ public class BibliotecaApp {
         System.out.println(bibliotecaView.showWelcomeMessage());
         System.out.println(bibliotecaView.showMenuOptions());
         Scanner scanner = new Scanner(System.in);
-        int optionSelected = scanner.nextInt();
+        String optionSelected = scanner.next();
         System.out.println(bibliotecaView.choiceMenuOption(optionSelected));
     }
 }

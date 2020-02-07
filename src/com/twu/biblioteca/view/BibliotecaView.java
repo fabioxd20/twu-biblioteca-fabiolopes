@@ -33,12 +33,12 @@ public class BibliotecaView {
         return "See you later!";
     }
 
-    public String choiceMenuOption(int optionSelected) {
+    public String choiceMenuOption(String optionSelected) {
         switch (optionSelected)
         {
-            case 0:
+            case "0":
                 return this.showQuitMessage();
-            case 1:
+            case "1":
                 return this.showListOfBooksWithAuthorAndYear();
             default:
                 return "Please select a valid option!";

@@ -38,7 +38,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void testListOfBookOptionSelected() {
-        int listOfBooksOption = 1;
+        String listOfBooksOption = "1";
 
         String listOfBooksWithAuthorAndYear = "Book One|Author One|2001\nBook Two|Author Two|2002\n";
 
@@ -49,7 +49,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void testNotifyInvalidOption() {
-        int invalidOption = 9;
+        String invalidOption = "a";
 
         String invalidMessage = "Please select a valid option!";
 
@@ -60,7 +60,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void testQuitOption() {
-        int quitOption = 0;
+        String quitOption = "0";
 
         String quitMessage = "See you later!";
 
