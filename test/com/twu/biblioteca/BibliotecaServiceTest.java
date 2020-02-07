@@ -10,20 +10,21 @@ public class BibliotecaServiceTest {
 
     @Test
     public void testListOfBooks(){
-        BibliotecaService bibliotecaService = new BibliotecaService();
+        BibliotecaService.loadBooks();
 
-        assertThat(bibliotecaService.getBooks().size() > 0, is(true));
+        assertThat(BibliotecaService.getBooks().size() > 0, is(true));
     }
 
     @Test
     public void testCheckoutABook() {
-        BibliotecaService bibliotecaService = new BibliotecaService();
-
         String checkoutBookOption = "1";
-        int expectBookListSize = bibliotecaService.getBooks().size() - 1;
 
-        bibliotecaService.checkoutBook(checkoutBookOption);
+        BibliotecaService.loadBooks();
 
-        assertThat(bibliotecaService.getBooks().size(), is(expectBookListSize));
+        int expectBookListSize = BibliotecaService.getBooks().size() - 1;
+
+        BibliotecaService.checkoutBook(checkoutBookOption);
+
+        assertThat(BibliotecaService.getBooks().size(), is(expectBookListSize));
     }
 }

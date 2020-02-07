@@ -8,17 +8,17 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        BibliotecaView bibliotecaView = new BibliotecaView();
+        BibliotecaService.loadBooks();
 
-        System.out.println(bibliotecaView.showWelcomeMessage());
+        System.out.println(BibliotecaView.showWelcomeMessage());
 
         while (true) {
-            System.out.println(bibliotecaView.showMenuOptions());
+            System.out.println(BibliotecaView.showMenuOptions());
 
             Scanner scanner = new Scanner(System.in);
             String optionSelected = scanner.next();
 
-            System.out.println(bibliotecaView.getMessageMenuOptionSelected(optionSelected));
+            System.out.println(BibliotecaView.getMessageMenuOptionSelected(optionSelected));
         }
     }
 }

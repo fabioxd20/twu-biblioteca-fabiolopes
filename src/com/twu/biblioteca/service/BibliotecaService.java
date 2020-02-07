@@ -8,24 +8,20 @@ import java.util.List;
 
 public class BibliotecaService {
 
-    private List<Book> books;
+    private static List<Book> books;
 
-    public BibliotecaService() {
-        loadBooks();
-    }
-
-    public void loadBooks() {
+    public static void loadBooks() {
         books = new LinkedList<Book> (Arrays.asList(
-                new Book("Book One","Author One","2001"),
-                new Book("Book Two","Author Two","2002")
-                ));
+                new Book(1,"Book One","Author One","2001"),
+                new Book(2,"Book Two","Author Two","2002")
+        ));
     }
 
-    public List<Book> getBooks() {
+    public static List<Book> getBooks() {
         return books;
     }
 
-    public void checkoutBook(String checkoutBookOption) {
+    public static void checkoutBook(String checkoutBookOption) {
         books.remove(Integer.parseInt(checkoutBookOption));
     }
 }

@@ -7,14 +7,12 @@ import java.util.List;
 
 public class BibliotecaView {
 
-    public String showWelcomeMessage() {
+    public static String showWelcomeMessage() {
         return "Welcome to Biblioteca your one-stop-shop for great book titles in Bangalore!";
     }
 
-    public String showListOfBooksWithAuthorAndYear() {
-        BibliotecaService bibliotecaService = new BibliotecaService();
-
-        List<Book> books = bibliotecaService.getBooks();
+    public static String showListOfBooksWithAuthorAndYear() {
+        List<Book> books = BibliotecaService.getBooks();
 
         StringBuilder booksAuthorAndYear = new StringBuilder();
 
@@ -23,27 +21,27 @@ public class BibliotecaView {
         return booksAuthorAndYear.toString ();
     }
 
-    public String showMenuOptions() { return "1 - List of books\n2 - Checkout a book"; }
+    public static String showMenuOptions() { return "1 - List of books\n2 - Checkout a book"; }
 
-    public String showQuitMessage() {
+    public static String showQuitMessage() {
         return "See you later!";
     }
 
-    public String showCheckoutBookMessage() { return "What book you want do the checkout? (Insert the position)"; }
+    public static String showCheckoutBookMessage() { return "What book you want do the checkout? (Insert the position)"; }
 
-    public String showDefaultMessageOptionInvalid() { return "Please select a valid option!"; }
+    public static String showDefaultMessageOptionInvalid() { return "Please select a valid option!"; }
 
-    public String getMessageMenuOptionSelected(String optionSelected) {
+    public static String getMessageMenuOptionSelected(String optionSelected) {
         switch (optionSelected)
         {
             case "0":
-                return this.showQuitMessage();
+                return showQuitMessage();
             case "1":
-                return this.showListOfBooksWithAuthorAndYear();
+                return showListOfBooksWithAuthorAndYear();
             case "2":
-                return this.showCheckoutBookMessage();
+                return showCheckoutBookMessage();
             default:
-                return this.showDefaultMessageOptionInvalid();
+                return showDefaultMessageOptionInvalid();
         }
     }
 }
