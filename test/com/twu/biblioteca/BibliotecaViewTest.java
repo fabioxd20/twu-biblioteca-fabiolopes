@@ -1,9 +1,10 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.controller.BibliotecaController;
+import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -15,7 +16,7 @@ public class BibliotecaViewTest {
     public void testShowWelcomeMessage() {
         String welcomeMessage = "Welcome to Biblioteca your one-stop-shop for great book titles in Bangalore!";
 
-        assertThat(BibliotecaView.showWelcomeMessage(), is(welcomeMessage));
+        assertThat(BibliotecaView.getWelcomeMessage(), is(welcomeMessage));
     }
 
     @Test
@@ -24,14 +25,14 @@ public class BibliotecaViewTest {
 
         BibliotecaService.loadBooks();
 
-        assertThat(BibliotecaView.showListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYear));
+        assertThat(BibliotecaView.getListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYear));
     }
 
     @Test
     public void testShowMenuOptions() {
-        String menuOptions = "1 - List of books\n2 - Checkout a book\n3 - Quit";
+        String menuOptions = "1 - List of books\n2 - Checkout a book\n0 - Quit";
 
-        assertThat(BibliotecaView.showMenuOptions(), is(menuOptions));
+        assertThat(BibliotecaView.getMenuOptions(), is(menuOptions));
     }
 
     @Test
@@ -71,4 +72,5 @@ public class BibliotecaViewTest {
 
         assertThat(BibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
     }
+
 }

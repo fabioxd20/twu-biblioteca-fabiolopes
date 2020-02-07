@@ -21,8 +21,12 @@ public class BibliotecaService {
         return books;
     }
 
-    public static void checkoutBook(long bookId) {
-        books.remove(findBookById ( bookId ));
+    public static boolean checkoutBook(long bookId) {
+        try{
+            return books.remove(findBookById(bookId));
+        } catch (NullPointerException errorMessage) {
+            return false;
+        }
     }
 
     private static Book findBookById(long id) {
