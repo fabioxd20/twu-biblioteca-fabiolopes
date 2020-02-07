@@ -8,7 +8,7 @@ public class BibliotecaController {
         if (BibliotecaService.checkoutBook(bookId)) {
             return BibliotecaView.getMessageSuccessCheckout();
         } else {
-            return "";
+            return BibliotecaView.getMessageUnsuccessCheckout();
         }
     }
 }

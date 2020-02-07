@@ -33,6 +33,8 @@ public class BibliotecaView {
 
     public static String getMessageSuccessCheckout() { return "Thank you! Enjoy the book!"; }
 
+    public static String getMessageUnsuccessCheckout() { return "Sorry, that book is not available"; }
+
     public static String getMessageMenuOptionSelected(String optionSelected) {
         switch (optionSelected)
         {

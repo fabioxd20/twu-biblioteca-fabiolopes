@@ -19,4 +19,17 @@ public class BibliotecaControllerTest {
 
         assertThat(BibliotecaController.checkoutBook(bookToRemove.getId()), is(successCheckoutMessage));
     }
+
+    @Test
+    public void testUnsuccessCheckoutMessage() {
+        String unsuccessCheckoutMessage = "Sorry, that book is not available";
+
+        Book bookToRemove = new Book (1,"Book One","Author One","2001");
+
+        BibliotecaService.loadBooks();
+
+        BibliotecaController.checkoutBook(bookToRemove.getId());
+
+        assertThat(BibliotecaController.checkoutBook(bookToRemove.getId()), is(unsuccessCheckoutMessage));
+    }
 }
