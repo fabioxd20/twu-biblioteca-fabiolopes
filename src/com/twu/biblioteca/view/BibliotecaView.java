@@ -27,7 +27,7 @@ public class BibliotecaView {
         return "See you later!";
     }
 
-    public static String showCheckoutBookMessage() { return "What book you want do the checkout? (Insert the position)"; }
+    public static String showCheckoutBookMessage() { return "What book you want do the checkout? (Insert the ID)"; }
 
     public static String showDefaultMessageOptionInvalid() { return "Please select a valid option!"; }
 

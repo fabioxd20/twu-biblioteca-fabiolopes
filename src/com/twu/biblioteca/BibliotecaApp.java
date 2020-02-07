@@ -26,7 +26,7 @@ public class BibliotecaApp {
                     System.exit ( 0 );
                 case "2":
                     scanner = new Scanner(System.in);
-                    String checkoutOption = scanner.next();
+                    long checkoutOption = scanner.nextLong();
                     BibliotecaService.checkoutBook (checkoutOption);
             }
         }

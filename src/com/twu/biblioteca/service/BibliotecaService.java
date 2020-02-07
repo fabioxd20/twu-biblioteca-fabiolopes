@@ -21,11 +21,11 @@ public class BibliotecaService {
         return books;
     }
 
-    public static void checkoutBook(String bookId) {
+    public static void checkoutBook(long bookId) {
         books.remove(findBookById ( bookId ));
     }
 
-    private static Book findBookById(String id) {
-        return books.stream().filter(book -> id.equals(Long.toString(book.getId()))).findFirst().orElse(null);
+    private static Book findBookById(long id) {
+        return books.stream().filter(book -> id == (book.getId())).findFirst().orElse(null);
     }
 }

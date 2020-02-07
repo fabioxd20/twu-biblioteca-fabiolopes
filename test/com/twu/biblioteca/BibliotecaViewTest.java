@@ -67,7 +67,7 @@ public class BibliotecaViewTest {
     public void testCheckoutOptionMessage() {
         String checkoutOption = "2";
 
-        String checkoutMessage = "What book you want do the checkout? (Insert the position)";
+        String checkoutMessage = "What book you want do the checkout? (Insert the ID)";
 
         assertThat(BibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
     }
