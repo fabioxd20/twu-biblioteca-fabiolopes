@@ -16,13 +16,11 @@ public class BibliotecaView {
 
         List<Book> books = bibliotecaService.getBooks();
 
-        String booksAuthorAndYear = "";
+        StringBuilder booksAuthorAndYear = new StringBuilder ();
 
-        for (Book book: books) {
-            booksAuthorAndYear += book.toString() + "\n";
-        }
+        for (Book book: books) booksAuthorAndYear.append(book.toString()).append("\n");
 
-        return booksAuthorAndYear;
+        return booksAuthorAndYear.toString ();
     }
 
     public String showMenuOptions() {

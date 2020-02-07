@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6c77dbb8-6c9a-4afd-ac78-f1888174f7fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TWU_Biblioteca-master/com/twu/biblioteca/BibliotecaViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TWU_Biblioteca-master/com/twu/biblioteca/BibliotecaViewTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaViewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/view/BibliotecaView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/view/BibliotecaView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/view/BibliotecaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/view/BibliotecaView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
       <recent name="com.twu.biblioteca" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BibliotecaApp">
+  <component name="RunManager" selected="JUnit.All in TWU_Biblioteca-master">
     <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaApp" />
       <module name="TWU_Biblioteca-master" />
@@ -109,8 +107,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BibliotecaApp" />
         <item itemvalue="JUnit.All in TWU_Biblioteca-master" />
+        <item itemvalue="Application.BibliotecaApp" />
         <item itemvalue="JUnit.BibliotecaViewTest" />
         <item itemvalue="JUnit.com.twu.biblioteca in TWU_Biblioteca-master" />
         <item itemvalue="JUnit.BibliotecaViewTest.testShowWelcomeMessage" />
@@ -131,6 +129,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="496" y="227" width="800" height="762" key="#Intentions" timestamp="1581095548356">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="496" y="227" width="800" height="762" key="#Intentions/0.0.1792.1120@0.0.1792.1120" timestamp="1581095548356" />
     <state x="636" y="270" key="#com.intellij.ide.util.MemberChooser" timestamp="1581015037363">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -139,29 +141,29 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="476" y="0" width="839" height="1120" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1581009535099" />
-    <state x="490" y="165" key="CommitChangelistDialog2" timestamp="1581005932600">
+    <state x="490" y="165" key="CommitChangelistDialog2" timestamp="1581095227601">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="490" y="165" key="CommitChangelistDialog2/0.0.1792.1120@0.0.1792.1120" timestamp="1581005932600" />
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1581095216613">
+    <state x="490" y="165" key="CommitChangelistDialog2/0.0.1792.1120@0.0.1792.1120" timestamp="1581095227601" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1581095535076">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1581095216613" />
+    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1581095535076" />
     <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581006243323" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1581095216613">
+    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1581095535075">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1581095216613" />
+    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1581095535075" />
     <state width="1750" height="318" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581006243320" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1581095216612">
+    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1581095535075">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1581095216612" />
+    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1581095535075" />
     <state width="1750" height="318" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581006243319" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1581095216613">
+    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1581095535076">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1581095216613" />
+    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1581095535076" />
     <state width="1750" height="318" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581006243322" />
     <state x="679" y="346" key="chooseDestDirectoryDialog" timestamp="1581006283556">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -180,9 +182,9 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="658" y="175" key="refactoring.ChangeSignatureDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1581093443479" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1581024966088">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1581095241350">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1581024966088" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1581095241350" />
   </component>
 </project>
