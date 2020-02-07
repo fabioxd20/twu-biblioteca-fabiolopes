@@ -35,7 +35,7 @@ public class BibliotecaView {
             case 1:
                 return this.showListOfBooksWithAuthorAndYear();
             default:
-                return "";
+                return "Please select a valid option!";
         }
     }
 }

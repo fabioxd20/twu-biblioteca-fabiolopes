@@ -46,4 +46,15 @@ public class BibliotecaViewTest {
 
         assertThat(bibliotecaView.choiceMenuOption(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
     }
+
+    @Test
+    public void testNotifyInvalidOption() {
+        int invalidOption = 9;
+
+        String invalidMessage = "Please select a valid option!";
+
+        BibliotecaView bibliotecaView = new BibliotecaView();
+
+        assertThat(bibliotecaView.choiceMenuOption(invalidOption), is(invalidMessage));
+    }
 }
