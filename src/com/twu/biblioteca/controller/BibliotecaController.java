@@ -35,4 +35,16 @@ public class BibliotecaController {
                 return BibliotecaView.getDefaultMessageOptionInvalid();
         }
     }
+
+    public static String getWelcomeMessage() {
+        return BibliotecaView.getWelcomeMessage();
+    }
+
+    public static void initBiblioteca() {
+        BibliotecaService.loadBooks();
+    }
+
+    public static String getMenuOptions() {
+        return BibliotecaView.getMenuOptions();
+    }
 }

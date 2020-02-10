@@ -9,12 +9,13 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        BibliotecaService.loadBooks();
 
-        System.out.println(BibliotecaView.getWelcomeMessage());
+        BibliotecaController.initBiblioteca();
+
+        System.out.println(BibliotecaController.getWelcomeMessage());
 
         while (true) {
-            System.out.println(BibliotecaView.getMenuOptions());
+            System.out.println(BibliotecaController.getMenuOptions());
 
             Scanner scanner = new Scanner(System.in);
             String optionSelected = scanner.next();
