@@ -21,7 +21,7 @@ public class BibliotecaView {
         return booksAuthorAndYear.toString ();
     }
 
-    public static String getMenuOptions() { return "1 - List of books\n2 - Checkout a book\n0 - Quit"; }
+    public static String getMenuOptions() { return "1 - List of books\n2 - Checkout a book\n3 - Return a book\n0 - Quit"; }
 
     public static String getQuitMessage() {
         return "See you later!";
@@ -35,6 +35,8 @@ public class BibliotecaView {
 
     public static String getMessageUnsuccessCheckout() { return "Sorry, that book is not available"; }
 
+    public static String getGiveBackBookMessage() { return "What book you want do the give back? (Insert the ID)"; }
+
     public static String getMessageMenuOptionSelected(String optionSelected) {
         switch (optionSelected)
         {
@@ -44,6 +46,8 @@ public class BibliotecaView {
                 return getListOfBooksWithAuthorAndYear();
             case "2":
                 return getCheckoutBookMessage();
+            case "3":
+                return getGiveBackBookMessage();
             default:
                 return getDefaultMessageOptionInvalid();
         }

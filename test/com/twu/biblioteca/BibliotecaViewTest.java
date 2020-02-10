@@ -30,7 +30,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void testShowMenuOptions() {
-        String menuOptions = "1 - List of books\n2 - Checkout a book\n0 - Quit";
+        String menuOptions = "1 - List of books\n2 - Checkout a book\n3 - Return a book\n0 - Quit";
 
         assertThat(BibliotecaView.getMenuOptions(), is(menuOptions));
     }
@@ -69,6 +69,15 @@ public class BibliotecaViewTest {
         String checkoutOption = "2";
 
         String checkoutMessage = "What book you want do the checkout? (Insert the ID)";
+
+        assertThat(BibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
+    }
+
+    @Test
+    public void testGiveBackOptionMessage() {
+        String checkoutOption = "3";
+
+        String checkoutMessage = "What book you want do the give back? (Insert the ID)";
 
         assertThat(BibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
     }
