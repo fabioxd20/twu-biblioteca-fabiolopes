@@ -37,6 +37,8 @@ public class BibliotecaView {
 
     public static String getMessageSuccessGiveBackBook() { return "Thank you for returning the book."; }
 
+    public static String getMessageUnsuccessGiveBackBook() { return "That is not a valid book to return."; }
+
     public static String getMessageMenuOptionSelected(String optionSelected) {
         switch (optionSelected)
         {

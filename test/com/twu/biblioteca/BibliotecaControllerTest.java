@@ -45,4 +45,15 @@ public class BibliotecaControllerTest {
 
         assertThat(BibliotecaController.giveBackBook(bookToRemove.getId()), is(successMessage));
     }
+
+    @Test
+    public void testUnsuccessGiveBackBookMessage() {
+        String successMessage = "That is not a valid book to return.";
+
+        Book bookToRemove = new Book (6,"Book invalid","Author invalid","2001");
+
+        BibliotecaService.loadBooks();
+
+        assertThat(BibliotecaController.giveBackBook(bookToRemove.getId()), is(successMessage));
+    }
 }

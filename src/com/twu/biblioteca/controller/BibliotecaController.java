@@ -16,7 +16,7 @@ public class BibliotecaController {
         if (BibliotecaService.giveBackBook(bookId)) {
             return BibliotecaView.getMessageSuccessGiveBackBook();
         }else{
-            return "";
+            return BibliotecaView.getMessageUnsuccessGiveBackBook();
         }
     }
 }
