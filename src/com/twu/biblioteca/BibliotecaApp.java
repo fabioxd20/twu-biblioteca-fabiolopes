@@ -25,10 +25,17 @@ public class BibliotecaApp {
             {
                 case "0":
                     System.exit ( 0 );
+                    break;
                 case "2":
                     scanner = new Scanner(System.in);
                     long checkoutOption = scanner.nextLong();
                     System.out.println(BibliotecaController.checkoutBook(checkoutOption));
+                    break;
+                case "3":
+                    scanner = new Scanner(System.in);
+                    long giveBackOption = scanner.nextLong();
+                    System.out.println(BibliotecaController.giveBackBook(giveBackOption));
+                    break;
             }
         }
     }
