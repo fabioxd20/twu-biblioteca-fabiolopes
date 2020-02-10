@@ -21,7 +21,13 @@ public class BibliotecaView {
         return booksAuthorAndYear.toString ();
     }
 
-    public static String getMenuOptions() { return "1 - List of books\n2 - Checkout a book\n3 - Return a book\n0 - Quit"; }
+    public static String getMenuOptions() {
+        return "1 - List of books\n" +
+            "2 - Checkout a book\n" +
+            "3 - Return a book\n" +
+            "4 - List of movies\n" +
+            "0 - Quit";
+    }
 
     public static String getQuitMessage() { return "See you later!"; }
 
