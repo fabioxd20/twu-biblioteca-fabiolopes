@@ -11,12 +11,4 @@ public class UserController {
 
         return UserService.login(user);
     }
-
-    public static String getMessageRequestLogin() {
-        return UserView.getLoginMessage();
-    }
-
-    public static String getMessageRequestPassword() {
-        return UserView.getPasswordMessage();
-    }
 }

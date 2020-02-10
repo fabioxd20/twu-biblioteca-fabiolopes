@@ -1,58 +1,67 @@
 package com.twu.biblioteca.controller;
 
-import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.service.BibliotecaService;
-import com.twu.biblioteca.service.UserService;
 import com.twu.biblioteca.view.BibliotecaView;
 
 public class BibliotecaController {
-    public static String checkoutBook(long bookId) {
+    public static void checkoutBook(long bookId) {
         if (BibliotecaService.checkoutBook(bookId)) {
-            return BibliotecaView.getMessageSuccessCheckout();
+            BibliotecaView.showMessageSuccessCheckout();
         } else {
-            return BibliotecaView.getMessageUnsuccessCheckout();
+            BibliotecaView.showMessageUnsuccessCheckout();
         }
     }
 
-    public static String giveBackBook(long bookId) {
+    public static void giveBackBook(long bookId) {
         if (BibliotecaService.giveBackBook(bookId)) {
-            return BibliotecaView.getMessageSuccessGiveBackBook();
+            BibliotecaView.showMessageSuccessGiveBackBook();
         }else{
-            return BibliotecaView.getMessageUnsuccessGiveBackBook();
+            BibliotecaView.showMessageUnsuccessGiveBackBook();
         }
     }
 
-    public static String handleMenuOption(String optionSelected) {
-        switch (optionSelected)
-        {
+    public static void handleMenuOption(String optionSelected) {
+        switch (optionSelected) {
             case "0":
-                return BibliotecaView.getQuitMessage();
+                BibliotecaView.showQuitMessage();
+                System.exit(0);
+                break;
             case "1":
-                return BibliotecaView.getListOfBooksWithAuthorAndYear();
+                BibliotecaView.showListOfBooksWithAuthorAndYear();
+                handleMenuOption(BibliotecaView.showMenuOptions());
+                break;
             case "2":
-                return BibliotecaView.getCheckoutBookMessage();
+                if (BibliotecaService.checkoutBook(Long.parseLong(BibliotecaView.showCheckoutBookMessage()))){
+                    BibliotecaView.showMessageSuccessCheckout();
+                } else {
+                    BibliotecaView.showMessageUnsuccessCheckout();
+                }
+                handleMenuOption(BibliotecaView.showMenuOptions());
+                break;
             case "3":
-                return BibliotecaView.getGiveBackBookMessage();
+                if (BibliotecaService.giveBackBook(Long.parseLong(BibliotecaView.showGiveBackBookMessage()))){
+                    BibliotecaView.showMessageSuccessGiveBackBook();
+                } else {
+                    BibliotecaView.showMessageUnsuccessGiveBackBook();
+                }
+                handleMenuOption(BibliotecaView.showMenuOptions());
+                break;
             case "4":
-                return BibliotecaView.getListofMoviesAvailable();
-            case "5":
-                return BibliotecaView.getCheckoutMovieMessage();
+                BibliotecaView.showListofMoviesAvailable();
+                handleMenuOption(BibliotecaView.showMenuOptions());
+                break;
             default:
-                return BibliotecaView.getDefaultMessageOptionInvalid();
+                BibliotecaView.showDefaultMessageOptionInvalid();
+                break;
         }
-    }
-
-    public static String getWelcomeMessage() {
-        return BibliotecaView.getWelcomeMessage();
     }
 
     public static void initBiblioteca() {
         BibliotecaService.loadBooks();
         BibliotecaService.loadMovies();
-    }
+        BibliotecaView.showWelcomeMessage();
 
-    public static String getMenuOptions() {
-        return BibliotecaView.getMenuOptions();
+        handleMenuOption(BibliotecaView.showMenuOptions());
     }
 
     public static boolean checkoutMovie(long movieId) {

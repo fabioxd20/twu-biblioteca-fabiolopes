@@ -5,6 +5,7 @@ import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.model.User;
 
+import com.twu.biblioteca.service.BibliotecaService;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,7 +16,8 @@ public class BibliotecaControllerTest {
 
     @Before
     public void init() {
-        BibliotecaController.initBiblioteca();
+        BibliotecaService.loadBooks();
+        BibliotecaService.loadMovies();
     }
 
     @Test

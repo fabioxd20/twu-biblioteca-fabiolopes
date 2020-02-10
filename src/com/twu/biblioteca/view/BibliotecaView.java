@@ -5,59 +5,93 @@ import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.service.BibliotecaService;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class BibliotecaView {
 
-    public static String getWelcomeMessage() {
-        return "Welcome to Biblioteca your one-stop-shop for great book titles in Bangalore!";
+    public static void showWelcomeMessage() {
+        System.out.println("Welcome to Biblioteca your one-stop-shop for great book titles in Bangalore!");
     }
 
-    public static String getListOfBooksWithAuthorAndYear() {
+    public static void showListOfBooksWithAuthorAndYear() {
         List<Book> books = BibliotecaService.getBooksAvailable();
 
         StringBuilder booksAuthorAndYear = new StringBuilder();
 
         for (Book book: books) booksAuthorAndYear.append(book.toString()).append("\n");
 
-        return booksAuthorAndYear.toString ();
+        System.out.println(booksAuthorAndYear.toString());
     }
 
-    public static String getMenuOptions() {
-        return  "1 - List of books\n" +
+    public static String showMenuOptions() {
+        String menu = "1 - List of books\n" +
                 "2 - Checkout a book\n" +
                 "3 - Return a book\n" +
                 "4 - List of movies\n" +
                 "5 - Checkout a movie\n" +
                 "0 - Quit";
+
+        System.out.println(menu);
+
+        Scanner scanner = new Scanner(System.in);
+        String optionSelected = scanner.next();
+
+        return optionSelected;
     }
 
-    public static String getQuitMessage() { return "See you later!"; }
+    public static void showQuitMessage() {
+        System.out.println( "See you later!");
+    }
 
-    public static String getCheckoutBookMessage() { return "What book you want do the checkout? (Insert the ID)"; }
+    public static String showCheckoutBookMessage() {
+        System.out.println("What book you want do the checkout? (Insert the ID)");
 
-    public static String getDefaultMessageOptionInvalid() { return "Please select a valid option!"; }
+        Scanner scanner = new Scanner(System.in);
+        String optionSelected = scanner.next();
 
-    public static String getMessageSuccessCheckout() { return "Thank you! Enjoy the book!"; }
+        return  optionSelected;
+    }
 
-    public static String getMessageUnsuccessCheckout() { return "Sorry, that book is not available"; }
+    public static void showDefaultMessageOptionInvalid() {
+        System.out.println("Please select a valid option!");
+    }
 
-    public static String getGiveBackBookMessage() { return "What book you want do the give back? (Insert the ID)"; }
+    public static void showMessageSuccessCheckout() {
+        System.out.println("Thank you! Enjoy the book!");
+    }
 
-    public static String getMessageSuccessGiveBackBook() { return "Thank you for returning the book."; }
+    public static void showMessageUnsuccessCheckout() {
+        System.out.println("Sorry, that book is not available");
+    }
 
-    public static String getMessageUnsuccessGiveBackBook() { return "That is not a valid book to return."; }
+    public static String showGiveBackBookMessage() {
+        System.out.println("What book you want do the give back? (Insert the ID)");
 
-    public static String getListofMoviesAvailable() {
+        Scanner scanner = new Scanner(System.in);
+        String optionSelected = scanner.next();
+
+        return  optionSelected;
+    }
+
+    public static void showMessageSuccessGiveBackBook() {
+        System.out.println("Thank you for returning the book.");
+    }
+
+    public static void showMessageUnsuccessGiveBackBook() {
+        System.out.println( "That is not a valid book to return.");
+    }
+
+    public static void showListofMoviesAvailable() {
         List<Movie> moviesAvailable = BibliotecaService.getMoviesAvailable();
 
         StringBuilder movies = new StringBuilder();
 
         for (Movie movie: moviesAvailable) movies.append(movie.toString()).append("\n");
 
-        return movies.toString();
+        System.out.println(movies.toString());
     }
 
-    public static String getCheckoutMovieMessage() {
-        return "What movie you want do the checkout? (Insert the ID)";
+    public static void showCheckoutMovieMessage() {
+        System.out.println("What movie you want do the checkout? (Insert the ID)");
     }
 }

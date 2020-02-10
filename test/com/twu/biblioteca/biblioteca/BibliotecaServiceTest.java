@@ -16,7 +16,8 @@ public class BibliotecaServiceTest {
 
     @Before
     public void init() {
-        BibliotecaController.initBiblioteca();
+        BibliotecaService.loadBooks();
+        BibliotecaService.loadMovies();
     }
 
     @Test
