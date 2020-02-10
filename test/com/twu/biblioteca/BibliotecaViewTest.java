@@ -81,7 +81,7 @@ public class BibliotecaViewTest {
     }
 
     @Test
-    public void testCheckoutOptionMessage() {
+    public void testCheckoutBookOptionMessage() {
         String checkoutOption = "2";
 
         String checkoutMessage = "What book you want do the checkout? (Insert the ID)";
@@ -90,10 +90,19 @@ public class BibliotecaViewTest {
     }
 
     @Test
-    public void testGiveBackOptionMessage() {
+    public void testGiveBackBookOptionMessage() {
         String checkoutOption = "3";
 
         String checkoutMessage = "What book you want do the give back? (Insert the ID)";
+
+        assertThat(BibliotecaController.handleMenuOption(checkoutOption), is(checkoutMessage));
+    }
+
+    @Test
+    public void testCheckoutMovieOptionMessage() {
+        String checkoutOption = "5";
+
+        String checkoutMessage = "What movie you want do the checkout? (Insert the ID)";
 
         assertThat(BibliotecaController.handleMenuOption(checkoutOption), is(checkoutMessage));
     }

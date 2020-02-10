@@ -37,6 +37,11 @@ public class BibliotecaApp {
                     long giveBackOption = scanner.nextLong();
                     System.out.println(BibliotecaController.giveBackBook(giveBackOption));
                     break;
+                case "5":
+                    scanner = new Scanner(System.in);
+                    long checkoutMovieOption = scanner.nextLong();
+                    System.out.println(BibliotecaController.checkoutMovie(checkoutMovieOption));
+                    break;
             }
         }
     }

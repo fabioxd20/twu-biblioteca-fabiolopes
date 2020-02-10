@@ -56,4 +56,8 @@ public class BibliotecaView {
 
         return movies.toString();
     }
+
+    public static String getCheckoutMovieMessage() {
+        return "What movie you want do the checkout? (Insert the ID)";
+    }
 }

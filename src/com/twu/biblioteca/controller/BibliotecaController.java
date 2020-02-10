@@ -33,6 +33,8 @@ public class BibliotecaController {
                 return BibliotecaView.getGiveBackBookMessage();
             case "4":
                 return BibliotecaView.getListofMoviesAvailable();
+            case "5":
+                return BibliotecaView.getCheckoutMovieMessage();
             default:
                 return BibliotecaView.getDefaultMessageOptionInvalid();
         }
@@ -49,5 +51,9 @@ public class BibliotecaController {
 
     public static String getMenuOptions() {
         return BibliotecaView.getMenuOptions();
+    }
+
+    public static boolean checkoutMovie(long movieId) {
+        return BibliotecaService.checkoutMovie(movieId);
     }
 }
