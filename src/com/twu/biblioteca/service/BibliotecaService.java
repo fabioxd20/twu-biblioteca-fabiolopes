@@ -32,4 +32,8 @@ public class BibliotecaService {
     private static Book findBookById(long id) {
         return books.stream().filter(book -> id == (book.getId())).findFirst().orElse(null);
     }
+
+    public static boolean giveBackBook(long bookId) {
+        return true;
+    }
 }

@@ -11,4 +11,12 @@ public class BibliotecaController {
             return BibliotecaView.getMessageUnsuccessCheckout();
         }
     }
+
+    public static String giveBackBook(long bookId) {
+        if (BibliotecaService.giveBackBook(bookId)) {
+            return BibliotecaView.getMessageSuccessGiveBackBook();
+        }else{
+            return "";
+        }
+    }
 }

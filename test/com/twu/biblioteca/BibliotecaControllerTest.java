@@ -32,4 +32,17 @@ public class BibliotecaControllerTest {
 
         assertThat(BibliotecaController.checkoutBook(bookToRemove.getId()), is(unsuccessCheckoutMessage));
     }
+
+    @Test
+    public void testSuccessGiveBackBookMessage() {
+        String successMessage = "Thank you for returning the book.";
+
+        Book bookToRemove = new Book (1,"Book One","Author One","2001");
+
+        BibliotecaService.loadBooks();
+
+        BibliotecaController.checkoutBook(bookToRemove.getId());
+
+        assertThat(BibliotecaController.giveBackBook(bookToRemove.getId()), is(successMessage));
+    }
 }

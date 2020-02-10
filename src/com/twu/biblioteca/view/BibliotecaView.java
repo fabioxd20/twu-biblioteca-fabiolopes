@@ -23,9 +23,7 @@ public class BibliotecaView {
 
     public static String getMenuOptions() { return "1 - List of books\n2 - Checkout a book\n3 - Return a book\n0 - Quit"; }
 
-    public static String getQuitMessage() {
-        return "See you later!";
-    }
+    public static String getQuitMessage() { return "See you later!"; }
 
     public static String getCheckoutBookMessage() { return "What book you want do the checkout? (Insert the ID)"; }
 
@@ -36,6 +34,8 @@ public class BibliotecaView {
     public static String getMessageUnsuccessCheckout() { return "Sorry, that book is not available"; }
 
     public static String getGiveBackBookMessage() { return "What book you want do the give back? (Insert the ID)"; }
+
+    public static String getMessageSuccessGiveBackBook() { return "Thank you for returning the book."; }
 
     public static String getMessageMenuOptionSelected(String optionSelected) {
         switch (optionSelected)
