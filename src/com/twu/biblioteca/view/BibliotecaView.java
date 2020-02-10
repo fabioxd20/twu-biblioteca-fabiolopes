@@ -44,20 +44,4 @@ public class BibliotecaView {
     public static String getMessageSuccessGiveBackBook() { return "Thank you for returning the book."; }
 
     public static String getMessageUnsuccessGiveBackBook() { return "That is not a valid book to return."; }
-
-    public static String getMessageMenuOptionSelected(String optionSelected) {
-        switch (optionSelected)
-        {
-            case "0":
-                return getQuitMessage();
-            case "1":
-                return getListOfBooksWithAuthorAndYear();
-            case "2":
-                return getCheckoutBookMessage();
-            case "3":
-                return getGiveBackBookMessage();
-            default:
-                return getDefaultMessageOptionInvalid();
-        }
-    }
 }

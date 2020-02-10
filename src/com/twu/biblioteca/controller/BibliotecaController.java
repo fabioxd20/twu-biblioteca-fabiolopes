@@ -19,4 +19,20 @@ public class BibliotecaController {
             return BibliotecaView.getMessageUnsuccessGiveBackBook();
         }
     }
+
+    public static String handleMenuOption(String optionSelected) {
+        switch (optionSelected)
+        {
+            case "0":
+                return BibliotecaView.getQuitMessage();
+            case "1":
+                return BibliotecaView.getListOfBooksWithAuthorAndYear();
+            case "2":
+                return BibliotecaView.getCheckoutBookMessage();
+            case "3":
+                return BibliotecaView.getGiveBackBookMessage();
+            default:
+                return BibliotecaView.getDefaultMessageOptionInvalid();
+        }
+    }
 }

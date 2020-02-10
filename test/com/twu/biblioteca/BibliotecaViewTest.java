@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 
 import com.twu.biblioteca.controller.BibliotecaController;
-import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
 import org.junit.Test;
@@ -48,7 +47,7 @@ public class BibliotecaViewTest {
 
         BibliotecaService.loadBooks();
 
-        assertThat(BibliotecaView.getMessageMenuOptionSelected(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
+        assertThat(BibliotecaController.handleMenuOption(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
     }
 
     @Test
@@ -57,7 +56,7 @@ public class BibliotecaViewTest {
 
         String invalidMessage = "Please select a valid option!";
 
-        assertThat(BibliotecaView.getMessageMenuOptionSelected(invalidOption), is(invalidMessage));
+        assertThat(BibliotecaController.handleMenuOption(invalidOption), is(invalidMessage));
     }
 
     @Test
@@ -66,7 +65,7 @@ public class BibliotecaViewTest {
 
         String quitMessage = "See you later!";
 
-        assertThat(BibliotecaView.getMessageMenuOptionSelected(quitOption), is(quitMessage));
+        assertThat(BibliotecaController.handleMenuOption(quitOption), is(quitMessage));
     }
 
     @Test
@@ -75,7 +74,7 @@ public class BibliotecaViewTest {
 
         String checkoutMessage = "What book you want do the checkout? (Insert the ID)";
 
-        assertThat(BibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
+        assertThat(BibliotecaController.handleMenuOption(checkoutOption), is(checkoutMessage));
     }
 
     @Test
@@ -84,7 +83,7 @@ public class BibliotecaViewTest {
 
         String checkoutMessage = "What book you want do the give back? (Insert the ID)";
 
-        assertThat(BibliotecaView.getMessageMenuOptionSelected(checkoutOption), is(checkoutMessage));
+        assertThat(BibliotecaController.handleMenuOption(checkoutOption), is(checkoutMessage));
     }
 
 }

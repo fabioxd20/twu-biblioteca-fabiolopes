@@ -19,7 +19,7 @@ public class BibliotecaApp {
             Scanner scanner = new Scanner(System.in);
             String optionSelected = scanner.next();
 
-            System.out.println(BibliotecaView.getMessageMenuOptionSelected(optionSelected));
+            System.out.println(BibliotecaController.handleMenuOption(optionSelected));
 
             switch (optionSelected)
             {
