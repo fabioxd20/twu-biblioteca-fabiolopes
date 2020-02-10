@@ -32,7 +32,7 @@ public class BibliotecaController {
             case "3":
                 return BibliotecaView.getGiveBackBookMessage();
             case "4":
-                return "Movie One|2001|Director One|10|1\nMovie Two|2002|Director Two|8|2\n";
+                return BibliotecaView.getListofMoviesAvailable();
             default:
                 return BibliotecaView.getDefaultMessageOptionInvalid();
         }
@@ -44,6 +44,7 @@ public class BibliotecaController {
 
     public static void initBiblioteca() {
         BibliotecaService.loadBooks();
+        BibliotecaService.loadMovies();
     }
 
     public static String getMenuOptions() {

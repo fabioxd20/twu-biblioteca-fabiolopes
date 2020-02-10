@@ -24,6 +24,11 @@ public class BibliotecaServiceTest {
     }
 
     @Test
+    public void testListOfMovies() {
+        assertThat(BibliotecaService.getMoviesAvailable().size() > 0, is(true));
+    }
+
+    @Test
     public void testCheckoutABook() {
         Book bookToRemove = new Book (1,"Book One","Author One","2001");
 

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.service.BibliotecaService;
 
 import java.util.List;
@@ -44,4 +45,14 @@ public class BibliotecaView {
     public static String getMessageSuccessGiveBackBook() { return "Thank you for returning the book."; }
 
     public static String getMessageUnsuccessGiveBackBook() { return "That is not a valid book to return."; }
+
+    public static String getListofMoviesAvailable() {
+        List<Movie> moviesAvailable = BibliotecaService.getMoviesAvailable();
+
+        StringBuilder movies = new StringBuilder();
+
+        for (Movie movie: moviesAvailable) movies.append(movie.toString()).append("\n");
+
+        return movies.toString();
+    }
 }
