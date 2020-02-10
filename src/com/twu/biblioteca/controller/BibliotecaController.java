@@ -1,6 +1,8 @@
 package com.twu.biblioteca.controller;
 
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.service.BibliotecaService;
+import com.twu.biblioteca.service.UserService;
 import com.twu.biblioteca.view.BibliotecaView;
 
 public class BibliotecaController {
