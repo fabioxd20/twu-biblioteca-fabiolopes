@@ -30,7 +30,7 @@ public class BibliotecaApp {
                 case "2":
                     scanner = new Scanner(System.in);
                     long checkoutOption = scanner.nextLong();
-                    System.out.println(BibliotecaController.checkoutBook(checkoutOption));
+//                    System.out.println(BibliotecaController.checkoutBook(checkoutOption));
                     break;
                 case "3":
                     scanner = new Scanner(System.in);

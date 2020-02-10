@@ -2,6 +2,7 @@ package com.twu.biblioteca.biblioteca;
 
 
 import com.twu.biblioteca.controller.BibliotecaController;
+import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
 import org.junit.Before;
@@ -105,6 +106,34 @@ public class BibliotecaViewTest {
         String checkoutMessage = "What movie you want do the checkout? (Insert the ID)";
 
         assertThat(BibliotecaController.handleMenuOption(checkoutOption), is(checkoutMessage));
+    }
+
+    @Test
+    public void testSuccessCheckoutMessage() {
+        String successCheckoutMessage = "Thank you! Enjoy the book!";
+
+        assertThat(BibliotecaView.getMessageSuccessCheckout(), is(successCheckoutMessage));
+    }
+
+    @Test
+    public void testUnsuccessCheckoutMessage() {
+        String unsuccessCheckoutMessage = "Sorry, that book is not available";
+
+        assertThat(BibliotecaView.getMessageUnsuccessCheckout(), is(unsuccessCheckoutMessage));
+    }
+
+    @Test
+    public void testSuccessGiveBackBookMessage() {
+        String successMessage = "Thank you for returning the book.";
+
+        assertThat(BibliotecaView.getMessageSuccessGiveBackBook(), is(successMessage));
+    }
+
+    @Test
+    public void testUnsuccessGiveBackBookMessage() {
+        String successMessage = "That is not a valid book to return.";
+
+        assertThat(BibliotecaView.getMessageUnsuccessGiveBackBook(), is(successMessage));
     }
 
 }
