@@ -4,12 +4,18 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.controller.BibliotecaController;
 import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class BibliotecaViewTest {
+
+    @Before
+    public void init() {
+        BibliotecaController.initBiblioteca();
+    }
 
     @Test
     public void testShowWelcomeMessage() {
@@ -21,8 +27,6 @@ public class BibliotecaViewTest {
     @Test
     public void testShowListOfBooksWithAuthorAndYear() {
         String listOfBooksWithAuthorAndYear = "Book One|Author One|2001|1\nBook Two|Author Two|2002|2\n";
-
-        BibliotecaService.loadBooks();
 
         assertThat(BibliotecaView.getListOfBooksWithAuthorAndYear(), is(listOfBooksWithAuthorAndYear));
     }
@@ -44,8 +48,6 @@ public class BibliotecaViewTest {
         String listOfBooksOption = "1";
 
         String listOfBooksWithAuthorAndYear = "Book One|Author One|2001|1\nBook Two|Author Two|2002|2\n";
-
-        BibliotecaService.loadBooks();
 
         assertThat(BibliotecaController.handleMenuOption(listOfBooksOption), is(listOfBooksWithAuthorAndYear));
     }
