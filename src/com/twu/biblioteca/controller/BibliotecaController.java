@@ -31,6 +31,8 @@ public class BibliotecaController {
                 return BibliotecaView.getCheckoutBookMessage();
             case "3":
                 return BibliotecaView.getGiveBackBookMessage();
+            case "4":
+                return "Movie One|2001|Director One|10|1\nMovie Two|2002|Director Two|8|2\n";
             default:
                 return BibliotecaView.getDefaultMessageOptionInvalid();
         }

@@ -53,6 +53,15 @@ public class BibliotecaViewTest {
     }
 
     @Test
+    public void testListOfMoviesOptionSelected() {
+        String listOfMoviesOption = "4";
+
+        String listOfMovies = "Movie One|2001|Director One|10|1\nMovie Two|2002|Director Two|8|2\n";
+
+        assertThat(BibliotecaController.handleMenuOption(listOfMoviesOption), is(listOfMovies));
+    }
+
+    @Test
     public void testNotifyInvalidOption() {
         String invalidOption = "a";
 
