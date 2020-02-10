@@ -38,6 +38,11 @@ public class BibliotecaService {
     private static Book findBookAvailableToCheckout(long bookId) {
         return books.stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
     }
+
+    private static Movie findMovieAvailableToCheckout(long movieId) {
+        return movies.stream().filter(movie -> movieId == (movie.getId())).findFirst().orElse(null);
+    }
+
     private static Book findBookAvailableInCatalog(long bookId) {
         return loadBooksCatalog().stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
     }
@@ -64,5 +69,13 @@ public class BibliotecaService {
                 new Movie(1,"Movie One","2001","Director One", 10),
                 new Movie(2,"Movie Two","2002","Director Two", 8)
         ));
+    }
+
+    public static boolean checkoutMovie(long movieId) {
+        try{
+            return movies.remove(findMovieAvailableToCheckout(movieId));
+        } catch (NullPointerException errorMessage) {
+            return false;
+        }
     }
 }

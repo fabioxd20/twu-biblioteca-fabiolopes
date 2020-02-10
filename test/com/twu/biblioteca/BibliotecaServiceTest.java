@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.controller.BibliotecaController;
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.service.BibliotecaService;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +36,15 @@ public class BibliotecaServiceTest {
         BibliotecaService.checkoutBook(bookToRemove.getId());
 
         assertThat(BibliotecaService.getBooksAvailable(), not(hasItems(bookToRemove)));
+    }
+
+    @Test
+    public void testCheckoutAMovie() {
+        Movie movieToCheckout = new Movie(2,"Movie Two","2002","Director Two", 8);
+
+        BibliotecaService.checkoutMovie(movieToCheckout.getId());
+
+        assertThat(BibliotecaService.getMoviesAvailable(), not(hasItems(movieToCheckout)));
     }
 
     @Test

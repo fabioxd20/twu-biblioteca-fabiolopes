@@ -23,11 +23,12 @@ public class BibliotecaView {
     }
 
     public static String getMenuOptions() {
-        return "1 - List of books\n" +
-            "2 - Checkout a book\n" +
-            "3 - Return a book\n" +
-            "4 - List of movies\n" +
-            "0 - Quit";
+        return  "1 - List of books\n" +
+                "2 - Checkout a book\n" +
+                "3 - Return a book\n" +
+                "4 - List of movies\n" +
+                "5 - Checkout a movie\n" +
+                "0 - Quit";
     }
 
     public static String getQuitMessage() { return "See you later!"; }

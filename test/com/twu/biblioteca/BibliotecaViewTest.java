@@ -38,6 +38,7 @@ public class BibliotecaViewTest {
                 "2 - Checkout a book\n" +
                 "3 - Return a book\n" +
                 "4 - List of movies\n" +
+                "5 - Checkout a movie\n" +
                 "0 - Quit";
 
         assertThat(BibliotecaView.getMenuOptions(), is(menuOptions));
