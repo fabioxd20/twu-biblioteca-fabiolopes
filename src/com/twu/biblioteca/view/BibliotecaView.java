@@ -12,7 +12,7 @@ public class BibliotecaView {
     }
 
     public static String getListOfBooksWithAuthorAndYear() {
-        List<Book> books = BibliotecaService.getBooks();
+        List<Book> books = BibliotecaService.getBooksAvailable();
 
         StringBuilder booksAuthorAndYear = new StringBuilder();
 

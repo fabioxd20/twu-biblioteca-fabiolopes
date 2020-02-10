@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.controller.BibliotecaController;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.service.BibliotecaService;
-import com.twu.biblioteca.view.BibliotecaView;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +20,7 @@ public class BibliotecaServiceTest {
 
     @Test
     public void testListOfBooks(){
-        assertThat(BibliotecaService.getBooks().size() > 0, is(true));
+        assertThat(BibliotecaService.getBooksAvailable().size() > 0, is(true));
     }
 
     @Test
@@ -30,12 +29,12 @@ public class BibliotecaServiceTest {
 
         BibliotecaService.checkoutBook(bookToRemove.getId());
 
-        assertThat(BibliotecaService.getBooks(), not(hasItems(bookToRemove)));
+        assertThat(BibliotecaService.getBooksAvailable(), not(hasItems(bookToRemove)));
     }
 
     @Test
     public void testListBooksCatalog() {
-        assertThat(BibliotecaService.loadCatalog().size() > 0, is(true));
+        assertThat(BibliotecaService.loadBooksCatalog().size() > 0, is(true));
     }
 
     @Test

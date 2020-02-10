@@ -11,10 +11,10 @@ public class BibliotecaService {
     private static List<Book> books;
 
     public static void loadBooks() {
-        books = loadCatalog();
+        books = loadBooksCatalog();
     }
 
-    public static List<Book> getBooks() {
+    public static List<Book> getBooksAvailable() {
         return books;
     }
 
@@ -30,7 +30,7 @@ public class BibliotecaService {
         return books.stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
     }
     private static Book findBookAvailableInCatalog(long bookId) {
-        return loadCatalog().stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
+        return loadBooksCatalog().stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
     }
 
     public static boolean giveBackBook(long bookId) {
@@ -43,7 +43,7 @@ public class BibliotecaService {
         }
     }
 
-    public static List<Book> loadCatalog() {
+    public static List<Book> loadBooksCatalog() {
         return new LinkedList<Book> (Arrays.asList(
                 new Book(1,"Book One","Author One","2001"),
                 new Book(2,"Book Two","Author Two","2002")
