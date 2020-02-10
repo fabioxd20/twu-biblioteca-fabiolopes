@@ -11,15 +11,17 @@ import static org.junit.Assert.assertThat;
 public class UserControllerTest {
     @Test
     public void testSuccessLoginUser() {
-        User user = new User("123-1234", "1234");
+        String login = "123-1234";
+        String password = "1234";
 
-        assertThat(UserController.login(user), is(true));
+        assertThat(UserController.login(login , password), is(true));
     }
 
     @Test
     public void testUnsuccessLoginUser() {
-        User user = new User("000-0000", "0000");
+        String login = "123-1234";
+        String password = "0000";
 
-        assertThat(UserController.login(user), is(false));
+        assertThat(UserController.login(login, password), is(false));
     }
 }

@@ -24,22 +24,4 @@ public class BibliotecaControllerTest {
 
         assertThat(BibliotecaController.checkoutMovie(movieToCheckout.getId()), is(true));
     }
-
-    @Test
-    public void testSuccessBookCheckoutWithLogin() {
-        String successCheckoutMessage = "Thank you! Enjoy the book!";
-        User userToLogin = new User("123-1234", "1234");
-        Book bookToCheckout = new Book (1,"Book One","Author One","2001");
-
-        assertThat(BibliotecaController.checkoutBook(userToLogin, bookToCheckout.getId()), is(successCheckoutMessage));
-    }
-
-    @Test
-    public void testUnsuccessBookCheckoutWithLogin() {
-        String successCheckoutMessage = "Sorry, that book is not available";
-        User userToLogin = new User("000-1234", "1234");
-        Book bookToCheckout = new Book (1,"Book One","Author One","2001");
-
-        assertThat(BibliotecaController.checkoutBook(userToLogin, bookToCheckout.getId()), is(successCheckoutMessage));
-    }
 }

@@ -6,8 +6,8 @@ import com.twu.biblioteca.service.UserService;
 import com.twu.biblioteca.view.BibliotecaView;
 
 public class BibliotecaController {
-    public static String checkoutBook(User user, long bookId) {
-        if (UserController.login(user) && BibliotecaService.checkoutBook(bookId)) {
+    public static String checkoutBook(long bookId) {
+        if (BibliotecaService.checkoutBook(bookId)) {
             return BibliotecaView.getMessageSuccessCheckout();
         } else {
             return BibliotecaView.getMessageUnsuccessCheckout();
