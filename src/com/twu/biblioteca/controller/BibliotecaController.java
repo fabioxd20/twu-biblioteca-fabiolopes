@@ -40,6 +40,9 @@ public class BibliotecaController {
             case "4":
                 this.showMoviesAvailable();
                 break;
+            case "5":
+                this.checkoutMovie();
+                break;
             default:
                 BibliotecaView.showDefaultMessageOptionInvalid();
                 break;
@@ -73,9 +76,23 @@ public class BibliotecaController {
         Book book = this.bibliotecaService.getBookInCatalog(bookId);
 
         if (this.bibliotecaService.checkout(book)) {
-            BibliotecaView.showMessageSuccessCheckout();
+            BibliotecaView.showMessageSuccessBookCheckout();
         } else {
-            BibliotecaView.showMessageUnsuccessCheckout();
+            BibliotecaView.showMessageUnsuccessBookCheckout();
+        }
+    }
+
+    private void checkoutMovie() {
+        BibliotecaView.showMessageRequestIDCheckoutMovie();
+
+        long movieId = Long.parseLong(getInputUser());
+
+        Movie movie = this.bibliotecaService.getMovieInCatalog(movieId);
+
+        if (this.bibliotecaService.checkout(movie)) {
+            BibliotecaView.showMessageSuccessMovieCheckout();
+        } else {
+            BibliotecaView.showMessageUnsuccessMovieCheckout();
         }
     }
 

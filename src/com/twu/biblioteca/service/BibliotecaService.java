@@ -59,4 +59,8 @@ public class BibliotecaService {
     public Book getBookInCatalog(long bookId) {
         return this.catalog.getBooks().stream().filter(book -> bookId == book.getId()).findFirst().orElse(null);
     }
+
+    public Movie getMovieInCatalog(long movieId) {
+        return this.catalog.getMovies().stream().filter(movie -> movieId == movie.getId()).findFirst().orElse(null);
+    }
 }

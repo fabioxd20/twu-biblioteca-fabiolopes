@@ -77,12 +77,21 @@ public class BibliotecaServiceTest {
     }
 
     @Test
-    public void testGetMediaInCatalog() {
+    public void testGetBookInCatalog() {
         long bookId = 1;
 
         Book book = this.bibliotecaService.getBookInCatalog(bookId);
 
         assertThat(book.getId(), is(bookId));
+    }
+
+    @Test
+    public void testGetMovieInCatalog() {
+        long movieId = 1;
+
+        Movie movie = this.bibliotecaService.getMovieInCatalog(movieId);
+
+        assertThat(movie.getId(), is(movieId));
     }
 
 }

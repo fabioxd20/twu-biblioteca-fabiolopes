@@ -47,11 +47,15 @@ public class BibliotecaView {
         System.out.println("Please select a valid option!");
     }
 
-    public static void showMessageSuccessCheckout() {
+    public static void showMessageSuccessBookCheckout() {
         System.out.println("Thank you! Enjoy the book!");
     }
 
-    public static void showMessageUnsuccessCheckout() {
+    public static void showMessageSuccessMovieCheckout() {
+        System.out.println("Thank you! Enjoy the movie!");
+    }
+
+    public static void showMessageUnsuccessBookCheckout() {
         System.out.println("Sorry, that book is not available");
     }
 
@@ -72,7 +76,11 @@ public class BibliotecaView {
         System.out.println( "That is not a valid book to return.");
     }
 
-    public static void showCheckoutMovieMessage() {
+    public static void showMessageRequestIDCheckoutMovie() {
         System.out.println("What movie you want do the checkout? (Insert the ID)");
+    }
+
+    public static void showMessageUnsuccessMovieCheckout() {
+        System.out.println("Sorry, that movie is not available");
     }
 }
