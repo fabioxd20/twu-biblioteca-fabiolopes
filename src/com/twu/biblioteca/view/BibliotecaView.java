@@ -1,5 +1,8 @@
 package com.twu.biblioteca.view;
 
+import com.twu.biblioteca.model.Media;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class BibliotecaView {
@@ -24,17 +27,20 @@ public class BibliotecaView {
         return optionSelected;
     }
 
+    public static void showMedias(List<Media> medias) {
+        StringBuilder sb = new StringBuilder();
+
+        for (Media media: medias) sb.append(media.toString()).append("\n");
+
+        System.out.println(sb.toString());
+    }
+
     public static void showQuitMessage() {
         System.out.println( "See you later!");
     }
 
-    public static String showCheckoutBookMessage() {
+    public static void showMessageRequestIDCheckoutBook() {
         System.out.println("What book you want do the checkout? (Insert the ID)");
-
-        Scanner scanner = new Scanner(System.in);
-        String optionSelected = scanner.next();
-
-        return  optionSelected;
     }
 
     public static void showDefaultMessageOptionInvalid() {
