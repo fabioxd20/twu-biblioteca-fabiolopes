@@ -1,26 +1,11 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.Movie;
-import com.twu.biblioteca.service.BibliotecaService;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class BibliotecaView {
 
     public static void showWelcomeMessage() {
         System.out.println("Welcome to Biblioteca your one-stop-shop for great book titles in Bangalore!");
-    }
-
-    public static void showListOfBooksWithAuthorAndYear() {
-        List<Book> books = BibliotecaService.getBooksAvailable();
-
-        StringBuilder booksAuthorAndYear = new StringBuilder();
-
-        for (Book book: books) booksAuthorAndYear.append(book.toString()).append("\n");
-
-        System.out.println(booksAuthorAndYear.toString());
     }
 
     public static String showMenuOptions() {
@@ -79,16 +64,6 @@ public class BibliotecaView {
 
     public static void showMessageUnsuccessGiveBackBook() {
         System.out.println( "That is not a valid book to return.");
-    }
-
-    public static void showListofMoviesAvailable() {
-        List<Movie> moviesAvailable = BibliotecaService.getMoviesAvailable();
-
-        StringBuilder movies = new StringBuilder();
-
-        for (Movie movie: moviesAvailable) movies.append(movie.toString()).append("\n");
-
-        System.out.println(movies.toString());
     }
 
     public static void showCheckoutMovieMessage() {

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.service;
 
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Media;
 import com.twu.biblioteca.model.Movie;
 
 import java.util.Arrays;
@@ -9,53 +10,7 @@ import java.util.List;
 
 public class BibliotecaService {
 
-    private static List<Book> books;
-    private static List<Movie> movies;
-
-    public static void loadBooks() {
-        books = loadBooksCatalog();
-    }
-    public static void loadMovies() {
-        movies = loadMoviesCatalog();
-    }
-
-    public static List<Book> getBooksAvailable() {
-        return books;
-    }
-
-    public static List<Movie> getMoviesAvailable() {
-        return movies;
-    }
-
-    public static boolean checkoutBook(long bookId) {
-        try{
-            return books.remove(findBookAvailableToCheckout(bookId));
-        } catch (NullPointerException errorMessage) {
-            return false;
-        }
-    }
-
-    private static Book findBookAvailableToCheckout(long bookId) {
-        return books.stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
-    }
-
-    private static Movie findMovieAvailableToCheckout(long movieId) {
-        return movies.stream().filter(movie -> movieId == (movie.getId())).findFirst().orElse(null);
-    }
-
-    private static Book findBookAvailableInCatalog(long bookId) {
-        return loadBooksCatalog().stream().filter(book -> bookId == (book.getId())).findFirst().orElse(null);
-    }
-
-    public static boolean giveBackBook(long bookId) {
-        Book bookAvailableInCatalog = findBookAvailableInCatalog(bookId);
-
-        if (bookAvailableInCatalog != null && findBookAvailableToCheckout(bookId) == null) {
-            return books.add(bookAvailableInCatalog);
-        } else {
-            return false;
-        }
-    }
+    private static List<Media> medias;
 
     public static List<Book> loadBooksCatalog() {
         return new LinkedList<Book> (Arrays.asList(
@@ -71,11 +26,7 @@ public class BibliotecaService {
         ));
     }
 
-    public static boolean checkoutMovie(long movieId) {
-        try{
-            return movies.remove(findMovieAvailableToCheckout(movieId));
-        } catch (NullPointerException errorMessage) {
-            return false;
-        }
+    public static boolean checkout(Media mediaToCheckout) {
+        return true;
     }
 }

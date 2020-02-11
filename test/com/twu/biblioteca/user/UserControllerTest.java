@@ -1,8 +1,6 @@
 package com.twu.biblioteca.user;
 
-import com.twu.biblioteca.controller.BibliotecaController;
 import com.twu.biblioteca.controller.UserController;
-import com.twu.biblioteca.model.User;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

@@ -6,12 +6,14 @@ public class Media {
     private String name;
     private String author;
     private String year;
+    private MediaType type;
 
-    public Media(long id, String name, String author, String year) {
+    public Media(long id, String name, String author, String year, MediaType type) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.year = year;
+        this.type = type;
     }
 
     public long getId() {
@@ -45,4 +47,6 @@ public class Media {
     public void setYear(String year) {
         this.year = year;
     }
+
+    private MediaType getType()  { return this.type; }
 }
