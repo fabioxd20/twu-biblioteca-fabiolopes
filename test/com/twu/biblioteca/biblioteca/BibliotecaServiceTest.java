@@ -2,13 +2,11 @@ package com.twu.biblioteca.biblioteca;
 
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Media;
-import com.twu.biblioteca.model.MediaType;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.service.BibliotecaService;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
@@ -21,17 +19,7 @@ public class BibliotecaServiceTest {
 
     @Before
     public void init() {
-        Book[] books = {
-                new Book(1,"Book One","Author One","2001"),
-                new Book(2,"Book Two","Author Two","2002")
-        };
-
-        Movie[] movies = {
-                new Movie(1,"Movie One","2001","Director One", 10),
-                new Movie(2,"Movie Two","2002","Director Two", 8)
-        };
-
-        this.bibliotecaService = new BibliotecaService(books, movies);
+        this.bibliotecaService = new BibliotecaService();
     }
 
     @Test
@@ -49,13 +37,8 @@ public class BibliotecaServiceTest {
     }
 
     @Test
-    public void testListBooksAvailable() {
-        Book[] books = {
-                new Book(1,"Book One","Author One","2001"),
-                new Book(2,"Book Two","Author Two","2002")
-        };
-
-        List<Media> booksAvailableToCheckout = this.bibliotecaService.getMediasAvailableToCheckout(MediaType.BOOK);
+    public void testListBooksAvailableToCheckout() {
+        List<Media> booksAvailableToCheckout = this.bibliotecaService.getBooksAvailableToCheckout();
 
         assertThat(booksAvailableToCheckout, is(not(booksAvailableToCheckout.isEmpty())));
     }
@@ -77,19 +60,36 @@ public class BibliotecaServiceTest {
     }
 
     @Test
+    public void testCheckoutMediaDontExist() {
+        Book book = null;
+
+        this.bibliotecaService.checkout(book);
+
+        assertThat(this.bibliotecaService.checkout(book), is(false));
+    }
+
+    @Test
     public void testGetBookInCatalog() {
         long bookId = 1;
 
-        Book book = this.bibliotecaService.getBookInCatalog(bookId);
+        Book book = this.bibliotecaService.getBook(bookId);
 
         assertThat(book.getId(), is(bookId));
+    }
+    @Test
+    public void testGetBookWhenIdNotExist() {
+        long bookId = 99;
+
+        Book book = this.bibliotecaService.getBook(bookId);
+
+        assertThat(book, is(nullValue()));
     }
 
     @Test
     public void testGetMovieInCatalog() {
         long movieId = 1;
 
-        Movie movie = this.bibliotecaService.getMovieInCatalog(movieId);
+        Movie movie = this.bibliotecaService.getMovie(movieId);
 
         assertThat(movie.getId(), is(movieId));
     }

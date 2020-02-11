@@ -2,7 +2,6 @@ package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Media;
-import com.twu.biblioteca.model.MediaType;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.service.BibliotecaService;
 import com.twu.biblioteca.view.BibliotecaView;
@@ -14,8 +13,8 @@ public class BibliotecaController {
 
     private BibliotecaService bibliotecaService;
 
-    public BibliotecaController(Book[] books, Movie[] movies) {
-        this.bibliotecaService = new BibliotecaService(books, movies);
+    public BibliotecaController() {
+        this.bibliotecaService = new BibliotecaService();
     }
 
     public void initBiblioteca() {
@@ -44,6 +43,9 @@ public class BibliotecaController {
             case "5":
                 this.checkoutMovie();
                 break;
+            case "6":
+//                this.giveBackMovie();
+                break;
             default:
                 BibliotecaView.showDefaultMessageOptionInvalid();
                 break;
@@ -58,13 +60,13 @@ public class BibliotecaController {
     }
 
     private void showBooksAvailable() {
-        List<Media> books = this.bibliotecaService.getMediasAvailableToCheckout(MediaType.BOOK);
+        List<Media> books = this.bibliotecaService.getBooksAvailableToCheckout();
 
         BibliotecaView.showMedias(books);
     }
 
     private void showMoviesAvailable() {
-        List<Media> movies = this.bibliotecaService.getMediasAvailableToCheckout(MediaType.MOVIE);
+        List<Media> movies = this.bibliotecaService.getMoviesAvailableToCheckout();
 
         BibliotecaView.showMedias(movies);
     }
@@ -74,7 +76,7 @@ public class BibliotecaController {
 
         long bookId = Long.parseLong(getInputUser());
 
-        Book book = this.bibliotecaService.getBookInCatalog(bookId);
+        Book book = this.bibliotecaService.getBook(bookId);
 
         if (this.bibliotecaService.checkout(book)) {
             BibliotecaView.showMessageSuccessBookCheckout();
@@ -88,7 +90,7 @@ public class BibliotecaController {
 
         long movieId = Long.parseLong(getInputUser());
 
-        Movie movie = this.bibliotecaService.getMovieInCatalog(movieId);
+        Movie movie = this.bibliotecaService.getMovie(movieId);
 
         if (this.bibliotecaService.checkout(movie)) {
             BibliotecaView.showMessageSuccessMovieCheckout();
@@ -102,7 +104,7 @@ public class BibliotecaController {
 
         long bookId = Long.parseLong(getInputUser());
 
-        Book book = this.bibliotecaService.getBookInCatalog(bookId);
+        Book book = this.bibliotecaService.getBook(bookId);
 
         if (this.bibliotecaService.giveBack(book)) {
             BibliotecaView.showMessageSuccessGiveBackBook();

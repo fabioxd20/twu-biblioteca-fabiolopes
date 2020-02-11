@@ -9,33 +9,53 @@ import java.util.List;
 
 public class BibliotecaService {
 
-    private Catalog catalog;
     private List<Media> availableMedias;
+    private List<Book> books;
+    private List<Movie> movies;
 
-    public BibliotecaService(Book[] pBooks, Movie[] pMovies) {
-        List<Book> books = new LinkedList<Book>(Arrays.asList(pBooks));
-        List<Movie> movies = new LinkedList<Movie>(Arrays.asList(pMovies));
+    public BibliotecaService() {
+        loadMedias();
+    }
 
-        this.catalog = new Catalog(books, movies);
+    public void loadMedias() {
+        this.books = new LinkedList<Book>(Arrays.asList(
+                new Book(1,"Book One","Author One","2001"),
+                new Book(2,"Book Two","Author Two","2002")
+        ));
 
-        availableMedias = new LinkedList<Media>();
+        this.movies = new LinkedList<Movie>(Arrays.asList(
+                new Movie(1,"Movie One","2001","Director One", 10),
+                new Movie(2,"Movie Two","2002","Director Two", 8)
+        ));
 
-        availableMedias.addAll(books);
-        availableMedias.addAll(movies);
+        this.availableMedias = new LinkedList<Media>();
+
+        this.availableMedias.addAll(books);
+        this.availableMedias.addAll(movies);
     }
 
     public List<Book> getBooksCatalog() {
-        return this.catalog.getBooks();
+        return this.books;
     }
 
     public List<Movie> getMoviesCatalog() {
-        return this.catalog.getMovies();
+        return this.movies;
     }
 
-    public List<Media> getMediasAvailableToCheckout(MediaType type) {
+    public List<Media> getBooksAvailableToCheckout() {
         List<Media> list = new ArrayList<>();
         for (Media media : availableMedias) {
-            if (media.getType() == type) {
+            if (media instanceof Book) {
+                list.add(media);
+            }
+        }
+        return list;
+    }
+
+    public List<Media> getMoviesAvailableToCheckout() {
+        List<Media> list = new ArrayList<>();
+        for (Media media : availableMedias) {
+            if (media instanceof Movie) {
                 list.add(media);
             }
         }
@@ -43,33 +63,34 @@ public class BibliotecaService {
     }
 
     public boolean checkout(Media pMedia) {
+        if (pMedia == null) return false;
+
         Media mediaFiltered = this.availableMedias
                 .stream()
-                .filter(media -> pMedia.getId() == media.getId() && pMedia.getType() == media.getType())
+                .filter(media -> pMedia.getId() == media.getId() && pMedia.getClass() == media.getClass())
                 .findFirst()
                 .orElse(null);
 
-        if (mediaFiltered == null) {
-            return false;
-        }
+        if (mediaFiltered == null) return false;
 
         return this.availableMedias.remove(mediaFiltered);
     }
 
-    public Book getBookInCatalog(long bookId) {
-        return this.catalog.getBooks().stream().filter(book -> bookId == book.getId()).findFirst().orElse(null);
+    public Book getBook(long bookId) {
+        return this.books.stream().filter(book -> bookId == book.getId()).findFirst().orElse(null);
     }
 
-    public Movie getMovieInCatalog(long movieId) {
-        return this.catalog.getMovies().stream().filter(movie -> movieId == movie.getId()).findFirst().orElse(null);
+    public Movie getMovie(long movieId) {
+         return this.movies.stream().filter(movie -> movieId == movie.getId()).findFirst().orElse(null);
     }
 
     public boolean giveBack(Media pMedia) {
         Media mediaFiltered = this.availableMedias
                 .stream()
-                .filter(media -> pMedia.getId() == media.getId() && pMedia.getType() == media.getType())
+                .filter(media -> pMedia.getId() == media.getId() && pMedia.getClass() == media.getClass())
                 .findFirst()
                 .orElse(null);
+
 
         if (mediaFiltered == null) {
             return this.availableMedias.add(mediaFiltered);

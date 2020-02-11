@@ -9,6 +9,8 @@ public class UserController {
     public static boolean login(String login, String password) {
         User user = new User(login, password);
 
-        return UserService.login(user);
+        UserService userService = new UserService();
+
+        return userService.login(user);
     }
 }
