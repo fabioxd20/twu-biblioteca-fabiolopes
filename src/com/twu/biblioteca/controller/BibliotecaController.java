@@ -52,6 +52,7 @@ public class BibliotecaController {
                 break;
             default:
                 BibliotecaView.showDefaultMessageOptionInvalid();
+                handleMenuOption(BibliotecaView.showMenuOptions());
                 break;
         }
     }
