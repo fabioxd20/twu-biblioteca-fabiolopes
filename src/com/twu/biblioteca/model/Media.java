@@ -48,5 +48,5 @@ public class Media {
         this.year = year;
     }
 
-    private MediaType getType()  { return this.type; }
+    public MediaType getType()  { return this.type; }
 }
