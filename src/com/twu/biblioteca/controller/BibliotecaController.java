@@ -35,7 +35,8 @@ public class BibliotecaController {
             case "2":
                 this.checkoutBook();
                 break;
-            case "3": //give back a book
+            case "3":
+                this.giveBackBook();
                 break;
             case "4":
                 this.showMoviesAvailable();
@@ -93,6 +94,20 @@ public class BibliotecaController {
             BibliotecaView.showMessageSuccessMovieCheckout();
         } else {
             BibliotecaView.showMessageUnsuccessMovieCheckout();
+        }
+    }
+
+    private void giveBackBook() {
+        BibliotecaView.showMessageRequestIDGiveBack();
+
+        long bookId = Long.parseLong(getInputUser());
+
+        Book book = this.bibliotecaService.getBookInCatalog(bookId);
+
+        if (this.bibliotecaService.giveBack(book)) {
+            BibliotecaView.showMessageSuccessGiveBackBook();
+        } else {
+            BibliotecaView.showMessageUnsuccessGiveBackBook();
         }
     }
 

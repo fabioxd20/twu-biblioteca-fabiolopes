@@ -94,4 +94,19 @@ public class BibliotecaServiceTest {
         assertThat(movie.getId(), is(movieId));
     }
 
+    @Test
+    public void testGiveBackMedia() {
+        Book book = new Book(1,"Book One","Author One","2001");
+
+        this.bibliotecaService.checkout(book);
+
+        assertThat(this.bibliotecaService.giveBack(book), is(true));
+    }
+
+    @Test
+    public void testGiveBackMediaAlreadyInList() {
+        Book book = new Book(1,"Book One","Author One","2001");
+
+        assertThat(this.bibliotecaService.giveBack(book), is(false));
+    }
 }

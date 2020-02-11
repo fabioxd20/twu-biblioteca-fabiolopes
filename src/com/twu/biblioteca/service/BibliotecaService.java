@@ -63,4 +63,18 @@ public class BibliotecaService {
     public Movie getMovieInCatalog(long movieId) {
         return this.catalog.getMovies().stream().filter(movie -> movieId == movie.getId()).findFirst().orElse(null);
     }
+
+    public boolean giveBack(Media pMedia) {
+        Media mediaFiltered = this.availableMedias
+                .stream()
+                .filter(media -> pMedia.getId() == media.getId() && pMedia.getType() == media.getType())
+                .findFirst()
+                .orElse(null);
+
+        if (mediaFiltered == null) {
+            return this.availableMedias.add(mediaFiltered);
+        }
+
+        return false;
+    }
 }

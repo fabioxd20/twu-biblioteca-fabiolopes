@@ -1,5 +1,6 @@
 package com.twu.biblioteca.model;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Catalog {
@@ -28,5 +29,14 @@ public class Catalog {
 
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
+    }
+
+    public List<Media> getMedias() {
+        List<Media> medias = new LinkedList<>();
+
+        medias.addAll(this.books);
+        medias.addAll(this.movies);
+
+        return medias;
     }
 }
