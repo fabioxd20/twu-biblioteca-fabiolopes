@@ -72,6 +72,8 @@ public class BibliotecaController {
     }
 
     private void checkoutBook() {
+        if (!validUserSession()) return;
+
         BibliotecaView.showMessageRequestIDCheckoutBook();
 
         long bookId = Long.parseLong(getInputUser());
@@ -100,6 +102,8 @@ public class BibliotecaController {
     }
 
     private void giveBackBook() {
+        if (!validUserSession()) return;
+
         BibliotecaView.showMessageRequestBookIDGiveBack();
 
         long bookId = Long.parseLong(getInputUser());
@@ -125,6 +129,13 @@ public class BibliotecaController {
         } else {
             BibliotecaView.showMessageUnsuccessGiveBackMovie();
         }
+    }
+
+    private boolean validUserSession() {
+        if (!UserController.isLogged()) {
+            UserController.requestLogin();
+        }
+        return UserController.isLogged();
     }
 
     private String getInputUser(){
