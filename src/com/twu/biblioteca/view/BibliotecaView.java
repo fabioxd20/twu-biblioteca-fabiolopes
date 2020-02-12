@@ -59,8 +59,12 @@ public class BibliotecaView {
         System.out.println("Sorry, that book is not available");
     }
 
-    public static void showMessageRequestIDGiveBack() {
+    public static void showMessageRequestBookIDGiveBack() {
         System.out.println("What book you want do the give back? (Insert the ID)");
+    }
+
+    public static void showMessageRequestMovieIDGiveBack() {
+        System.out.println("What movie you want do the give back? (Insert the ID)");
     }
 
     public static void showMessageSuccessGiveBackBook() {
@@ -69,6 +73,14 @@ public class BibliotecaView {
 
     public static void showMessageUnsuccessGiveBackBook() {
         System.out.println("That is not a valid book to return.");
+    }
+
+    public static void showMessageSuccessGiveBackMovie() {
+        System.out.println("Thank you for returning the movie.");
+    }
+
+    public static void showMessageUnsuccessGiveBackMovie() {
+        System.out.println("That is not a valid movie to return.");
     }
 
     public static void showMessageRequestIDCheckoutMovie() {

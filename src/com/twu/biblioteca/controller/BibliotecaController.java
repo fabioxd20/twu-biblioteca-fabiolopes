@@ -44,7 +44,7 @@ public class BibliotecaController {
                 this.checkoutMovie();
                 break;
             case "6":
-//                this.giveBackMovie();
+                this.giveBackMovie();
                 break;
             default:
                 BibliotecaView.showDefaultMessageOptionInvalid();
@@ -100,7 +100,7 @@ public class BibliotecaController {
     }
 
     private void giveBackBook() {
-        BibliotecaView.showMessageRequestIDGiveBack();
+        BibliotecaView.showMessageRequestBookIDGiveBack();
 
         long bookId = Long.parseLong(getInputUser());
 
@@ -110,6 +110,20 @@ public class BibliotecaController {
             BibliotecaView.showMessageSuccessGiveBackBook();
         } else {
             BibliotecaView.showMessageUnsuccessGiveBackBook();
+        }
+    }
+
+    private void giveBackMovie() {
+        BibliotecaView.showMessageRequestMovieIDGiveBack();
+
+        long movieId = Long.parseLong(getInputUser());
+
+        Movie movie = this.bibliotecaService.getMovie(movieId);
+
+        if (this.bibliotecaService.giveBack(movie)) {
+            BibliotecaView.showMessageSuccessGiveBackMovie();
+        } else {
+            BibliotecaView.showMessageUnsuccessGiveBackMovie();
         }
     }
 
