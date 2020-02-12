@@ -2,7 +2,8 @@ package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.service.UserService;
-import com.twu.biblioteca.view.UserView;
+
+import java.util.Scanner;
 
 public class UserController {
 
@@ -13,4 +14,10 @@ public class UserController {
 
         return userService.login(user);
     }
+
+    public static String reciveCredentialsUser() {
+        Scanner scanner = new Scanner(System.in);
+        return  scanner.next();
+    }
+
 }

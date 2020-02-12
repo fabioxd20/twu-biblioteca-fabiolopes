@@ -6,16 +6,13 @@ import com.twu.biblioteca.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class UserControllerTest {
-    private UserService userService;
-    @Before
-    public void init() {
-        this.userService = new UserService();
-    }
-
     @Test
     public void testSuccessLoginUser() {
         String login = "123-1234";
@@ -33,11 +30,14 @@ public class UserControllerTest {
     }
 
     @Test
-    public void shouldReturnTrueIfUserIsLogged() {
-        User user = new User("123-1234", "1234");
+    public void shouldReturnAStringWhenRequestCredentials() {
+        String login = "123-1234";
 
-        this.userService.login(user);
+        ByteArrayInputStream in = new ByteArrayInputStream(login.getBytes());
+        System.setIn(in);
 
-        assertThat(this.userService.isLogged(), is(true));
+        String inpuntResponse = UserController.reciveCredentialsUser();
+
+        assertThat(inpuntResponse, is(login));
     }
 }
