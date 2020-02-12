@@ -50,7 +50,9 @@ public class BibliotecaController {
                 BibliotecaView.showDefaultMessageOptionInvalid();
                 break;
         }
-
+        if (UserController.isLogged()) {
+            UserController.showUserLogged();
+        }
         this.handleMenuOption(BibliotecaView.showMenuOptions());
     }
 

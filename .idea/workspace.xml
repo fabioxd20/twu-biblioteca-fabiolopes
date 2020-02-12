@@ -5,8 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/controller/BibliotecaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/controller/BibliotecaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU_Biblioteca-master/com/twu/biblioteca/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/TWU_Biblioteca-master/com/twu/biblioteca/user/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TWU_Biblioteca-master/com/twu/biblioteca/user/UserServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/controller/BibliotecaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controller/BibliotecaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/user/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/user/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,10 +155,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="100" y="100" width="1592" height="920" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1581451062768" />
-    <state x="636" y="270" key="#com.intellij.ide.util.MemberChooser" timestamp="1581438261617">
+    <state x="636" y="270" key="#com.intellij.ide.util.MemberChooser" timestamp="1581535458231">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="636" y="270" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1581438261617" />
+    <state x="636" y="270" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1581535458231" />
     <state x="476" y="0" width="839" height="1120" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581357337395">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -177,25 +183,25 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="524" height="466" key="DebuggerActiveHint/0.0.1792.1120@0.0.1792.1120" timestamp="1581451133092" />
-    <state width="1750" height="239" key="GridCell.Tab.0.bottom" timestamp="1581534840747">
+    <state width="1750" height="239" key="GridCell.Tab.0.bottom" timestamp="1581535813854">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="239" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1581534840747" />
+    <state width="1750" height="239" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1581535813854" />
     <state width="1750" height="391" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581344766017" />
-    <state width="1750" height="239" key="GridCell.Tab.0.center" timestamp="1581534840746">
+    <state width="1750" height="239" key="GridCell.Tab.0.center" timestamp="1581535813852">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="239" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1581534840746" />
+    <state width="1750" height="239" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1581535813852" />
     <state width="1750" height="391" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581344766016" />
-    <state width="1750" height="239" key="GridCell.Tab.0.left" timestamp="1581534840745">
+    <state width="1750" height="239" key="GridCell.Tab.0.left" timestamp="1581535813852">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="239" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1581534840745" />
+    <state width="1750" height="239" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1581535813852" />
     <state width="1750" height="391" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581344766013" />
-    <state width="1750" height="239" key="GridCell.Tab.0.right" timestamp="1581534840747">
+    <state width="1750" height="239" key="GridCell.Tab.0.right" timestamp="1581535813853">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="239" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1581534840747" />
+    <state width="1750" height="239" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1581535813853" />
     <state width="1750" height="391" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581344766016" />
     <state width="1750" height="391" key="GridCell.Tab.1.bottom" timestamp="1581451142930">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -246,9 +252,9 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="658" y="175" key="refactoring.ChangeSignatureDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1581113207470" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1581444537763">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1581535692625">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1581444537763" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1581535692625" />
   </component>
 </project>

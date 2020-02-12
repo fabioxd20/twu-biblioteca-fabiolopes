@@ -37,4 +37,8 @@ public class UserController {
         return userService.isLogged();
     }
 
+    public static void showUserLogged() {
+        System.out.println(userService.getUserLogged());
+    }
+
 }

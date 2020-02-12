@@ -28,4 +28,13 @@ public class UserServiceTest {
     public void shouldReturnFalseIfUserNotIsLogged() {
         assertThat(this.userService.isLogged(), is(false));
     }
+
+    @Test
+    public void shouldReturnUserWhenIsLogged() {
+        User user = new User("123-1234", "1234");
+
+        this.userService.login(user);
+
+        assertThat(this.userService.getUserLogged(), is(user));
+    }
 }

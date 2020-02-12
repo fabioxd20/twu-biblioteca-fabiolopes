@@ -11,13 +11,13 @@ public class UserService {
     private User userLogged = null;
 
     private List<User> users = new LinkedList<User>(Arrays.asList(
-            new User("123-1234", "1234")
+            new User("123-1234", "1234", "Fabio", "fabioxd.20@gmail.com", "81 984543277")
     ));
 
     public boolean login(User userToLogin) {
         User user = findUser(userToLogin);
         if (user != null && user.getPassword().equals(userToLogin.getPassword())) {
-            this.userLogged = userToLogin;
+            this.userLogged = user;
             return  true;
         } else {
             return false;
@@ -34,5 +34,9 @@ public class UserService {
         }
 
         return true;
+    }
+
+    public User getUserLogged() {
+        return this.userLogged;
     }
 }
